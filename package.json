@@ -1,0 +1,14 @@
+{
+  "name": "sofia-webhook",
+  "version": "1.0.0",
+  "description": "Webhook server that receives Vapi voice AI call results and writes them to HubSpot CRM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.0",
+    "express": "^4.21.0"
+  }
+}
