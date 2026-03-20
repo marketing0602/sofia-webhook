@@ -188,6 +188,18 @@ app.post("/trigger-call", async (req, res) => {
   }
 });
 
+// ─── GET /debug-env (Temporary Debug) ──────────────────────────────────────
+
+app.get("/debug-env", (req, res) => {
+  res.json({
+    "VAPI_API_KEY_length": process.env.VAPI_API_KEY?.length || 0,
+    "VAPI_API_KEY_first4": process.env.VAPI_API_KEY?.substring(0, 4) || "empty",
+    "VAPI_API_KEY_last4": process.env.VAPI_API_KEY?.slice(-4) || "empty",
+    "VAPI_ASSISTANT_ID": process.env.VAPI_ASSISTANT_ID || "empty",
+    "VAPI_PHONE_NUMBER_ID": process.env.VAPI_PHONE_NUMBER_ID || "empty"
+  });
+});
+
 // ─── Health check ────────────────────────────────────────────────────────────
 
 app.get("/", (_req, res) => {
